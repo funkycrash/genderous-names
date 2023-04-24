@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .is-primary.input,
+        .is-primary.textarea {
+            border-color: #B57114;
+        }
+
+        .is-primary.input:active,
+        .is-primary.textarea:active,
+        .is-primary.input:focus,
+        .is-primary.textarea:focus {
+            box-shadow: 0 0 0 0.125em rgba(181, 113, 20, .25)
+        }
+
+        .button.is-primary {
+            background-color: #B57114;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button.is-primary:hover {
+            background-color: #962B09;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+
+                    <div class="column is-one-third">
+                        <h1 class="title">Gender-ous Names: A Punny Look at How Names Define Identity</h1>
+                        <small>Hey there, don't be shy, just give us a name and we'll give you a gender. No need to feel
+                            binary about it, we've got all the genders covered. Let's just hope you don't get a
+                            gender-bender name!</small>
+                        <form>
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input class="input is-primary" type="text" id="name-input" placeholder="Enter your name">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary is-fullwidth" id="submit-btn">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function setEventListenerOnSubmitButton() {
+            document.getElementById("submit-btn").addEventListener("click", function (event) {
+                event.preventDefault();
+                const name = document.getElementById("name-input").value;
+                const data = { name: name };
+                const url = "https://cheerydonkeys.pythonanywhere.com/predict_gender";
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            })
+        }
+
+        setEventListenerOnSubmitButton()
+    </script>
+</body>
+
+</html>
