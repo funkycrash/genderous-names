@@ -71,7 +71,7 @@
             document.getElementById("submit-btn").addEventListener("click", function (event) {
                 event.preventDefault();
                 const name = document.getElementById("name-input").value;
-                const data = { name: name };
+                const data = { 'name': name };
                 const url = "https://cheerydonkeys.pythonanywhere.com/predict_gender";
 
                 fetch(url, {
