@@ -52,7 +52,8 @@
                             <div class="field">
                                 <label class="label">Name</label>
                                 <div class="control">
-                                    <input class="input is-primary" type="text" id="name-input" placeholder="Enter your name">
+                                    <input class="input is-primary" type="text" id="name-input"
+                                        placeholder="Enter your name">
                                 </div>
                             </div>
                             <div class="field">
@@ -71,24 +72,20 @@
             document.getElementById("submit-btn").addEventListener("click", function (event) {
                 event.preventDefault();
                 const name = document.getElementById("name-input").value;
-                const data = { 'name': name };
-                const url = "https://cheerydonkeys.pythonanywhere.com/predict_gender";
+                const data = { "name": name };
+                const url = 'https://cheerydonkeys.pythonanywhere.com/predict_gender';
 
                 fetch(url, {
-                    mode: 'no-cors',
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
                 })
                     .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
+                    .then(data => console.log(data))
+                    .catch(error => console.error(error))
             })
         }
 
