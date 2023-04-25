@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: bisque;
+        }
+
+        .is-primary.input:active,
+        .is-primary.textarea:active,
+        .is-primary.input:focus,
+        .is-primary.textarea:focus {
+            box-shadow: 0 0 0 0.125em rgba(181, 113, 20, .25)
+        }
+
+        .button.is-primary {
+            background-color: #B57114;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button.is-primary:hover {
+            background-color: #962B09;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+
+                    <div class="content">
+                        <a href="./index.html" class="button is-primary is-pulled-right">Back to the app</a>
+                        <h1 class="title has-text-centered">Methodology</h1>
+                        <h2 class="subtitle">1. Why I did this project? (~7 hours)</h2>
+                        <p>I started this class on machine learning and wanted to get some practice using sci-kit learn
+                            and apply some of the concepts I learned. I also wanted to try some supervised training data
+                            concepts.</p>
+                        <h2 class="subtitle">2. Dataset</h2>
+                        <p>I used a dataset from the machine learning repository from 2020, which can be found at <a
+                                href="https://archive.ics.uci.edu/ml/datasets.php">https://archive.ics.uci.edu/ml/datasets.php</a>.
+                            The dataset takes a name as input and predicts if the name is mostly assigned to female or
+                            male at birth.</p>
+
+                        <h2 class="subtitle">3. API</h2>
+                        <p>I created a small API using Flask in Python and hosted it on <a
+                                href="https://www.pythonanywhere.com">PythonAnywhere</a>. The API takes a name as an
+                            input using HTTP POST and returns the JSON result described above.</p>
+
+                        <h2 class="subtitle">4. Web App</h2>
+                        <p>I finally wrote the HTML page you are seeing here with some JavaScript and CSS to tie everything
+                            together. The web app includes a form that allows users to enter a name and receive the
+                            predicted gender.</p>
+
+                        <h2 class="subtitle">Tools Used</h2>
+                        <ul>
+                            <li><a href="https://chat.openai.com/">OpenAI</a> to generate texts and puns</li>
+                            <li><a href="https://www.iconfinder.com/">IconFinder</a> for SVG resources</li>
+                            <li><a href="https://color.adobe.com/">Adobe Kuler</a> for color palette</li>
+                            <li><a href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a> for the SVG Animated
+                                Loader</li>
+                            <li><a href="https://bulma.io/">Bulma CSS</a> framework</li>
+                            <li><a href="https://scikit-learn.org/">Sci Kit learn</a> for machine learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
